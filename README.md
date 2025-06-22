@@ -36,8 +36,12 @@ It simulates the backend logic of a simplified **stock portfolio tracker**, show
 
 ## Project Structure
 ├── Transaction.hpp / Transaction.cpp # Node class for individual transactions
+
 ├── History.hpp / History.cpp # Linked list manager for all transactions
+
 ├── project4.hpp # Helper I/O functions for file reading
+
 ├── transaction_history.txt # Input file containing transaction data
+
 ├── main.cpp # (Assumed) Main driver file
 
