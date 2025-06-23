@@ -4,46 +4,62 @@
 
 ### Author: Insaf Lashari  
 **Date:** December 5, 2023  
-**Course Project:** ECE150 – Introduction to Programming (Project 4)  
+**University of Waterloo – ECE150 Project 4
 
 ---
 
 ## Overview
 
-**Mo Money** is a C++ project that processes a linked list of stock market transactions to compute:
+**Mo Money** is a C++ console program that simulates a stock transaction history and computes:
 
 - Adjusted Cost Base (ACB)
 - Capital Gains/Losses (CGL)
-- Share balances and per-share values over time
+- Share balances and per-share values across transactions
 
-It simulates the backend logic of a simplified **stock portfolio tracker**, showcasing linked list manipulation, date sorting, and financial calculations.
+This project demonstrates linked list data structures, dynamic memory, file parsing, and basic financial computation.
 
 ---
 
 ## Features
 
-✅ Transaction creation and storage via a linked list  
-✅ Chronological sorting of transactions (by date + transaction ID)  
-✅ Dynamic calculation of:
-- Adjusted Cost Base (ACB)
-- ACB per share
-- Share balance after each transaction
-- Capital Gains/Losses (CGL) for "Sell" actions
+✅ Build a linked list from a transaction file  
+✅ Sort transactions by date and transaction ID  
+✅ Compute ACB, ACB/share, and CGL  
+✅ Display clean, formatted transaction history  
+✅ Modular structure using OOP principles
 
-✅ Reads transactions from `transaction_history.txt` using helper functions  
-✅ Clean memory management with proper destructors  
-✅ Terminal output for displaying formatted transaction history  
+## Key Concepts
+
+- Singly linked lists
+- Operator overloading (`<` for date comparison)
+- File I/O (via `project4.cpp` helpers)
+- Dynamic memory & destructors
+- Financial logic (buy/sell, cost basis, profit/loss)
 
 ---
 
 ## Project Structure
-├── Transaction.hpp / Transaction.cpp # Node class for individual transactions
+├── main.cpp # Program entry point
 
-├── History.hpp / History.cpp # Linked list manager for all transactions
+├── History_Transaction_definitions.cpp # All class definitions (History & Transaction)
 
-├── project4.hpp # Helper I/O functions for file reading
+├── History.hpp / Transaction.hpp # Header files for class declarations
 
-├── transaction_history.txt # Input file containing transaction data
+├── project4.cpp / project4.hpp # Helper functions for file input
 
-├── main.cpp # (Assumed) Main driver file
+├── transaction_history.txt # Input data file
+
+### Sample Output
+
+========== BEGIN TRANSACTION HISTORY ============
+   1 AAPL   15    3 2020   Buy   100     12000.00     12000.00  100     120.000       0.000
+   2 AAPL   10    5 2020  Sell    50      7000.00      6000.00   50     120.000     1000.000
+========== END TRANSACTION HISTORY ============
+
+
+## How to Compile and Run
+### Compile (Windows PowerShell):
+```bash
+g++ -o mo_money.exe main.cpp History_Transaction_definitions.cpp project4.cpp -std=c++11
+.\mo_money.exe
 
